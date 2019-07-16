@@ -9,16 +9,10 @@ function App() {
 
        
               
-               [home_score,setScoreHome] =useState(0)
-               [away_score,setScoreAway] =useState(0)
+              let [home_score,setScoreHome] = useState(0)
+              let [away_score,setScoreAway] = useState(0)
     
-               { homeButtons__touchdown ===  true ? setScore(+3) === true }
     
-               { homeButtons__fieldGoal ===  true ? setScore(+3) === true }
-               { awayButtons_fieldGoal === true ? setScore(+3)  === true     }
-         
-
-                   { awayButtons_fieldGoal === true ? setScore(+3)  === true     }
              
              
 
@@ -32,7 +26,7 @@ function App() {
 
             {/* TODO STEP 3 - We need to change the hardcoded values in these divs to accept dynamic values from our state. */}
 
-              <div className='home_score'> {home_score}</div>
+              <div className='home__score'> {home_score}</div>
           </div>
           <div className="timer">00:03</div>
           <div className="away">
@@ -46,12 +40,12 @@ function App() {
      
         <div className="homeButtons">
           {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
-        <button  onClick={ ()=>setScoreHome(+7) } className="homeButtons__touchdown">Home Touchdown</button>
-        <button  onClick={ ()=>setScoreHome(+3) }  className="homeButtons__fieldGoal">Home Field Goal</button>
+        <button  onClick={ ()=>setScoreHome(home_score +7) } className="homeButtons__touchdown">Home Touchdown</button>
+        <button  onClick={ ()=>setScoreHome(home_score +3) }  className="homeButtons__fieldGoal">Home Field Goal</button>
         </div>      
         <div className="awayButtons">
-  <button onClick={ ()=>setScoreAway(+7)}className="awayButtons__touchdown">Away Touchdown</button>
-          <button onClick={ ()=>setScoreAway(+3)} className="awayButtons__fieldGoal">Away Field Goal</button>
+  <button onClick={ ()=>setScoreAway(away_score +7)}className="awayButtons__touchdown">Away Touchdown</button>
+          <button onClick={ ()=>setScoreAway(away_score +3)} className="awayButtons__fieldGoal">Away Field Goal</button>
         </div>
       </section>
     </div>
@@ -60,8 +54,8 @@ function App() {
 
 
               
-       
-  ReactDOM.render(<App />, document.getElementById('root'));     
+ export default App      
+
 
 
 
